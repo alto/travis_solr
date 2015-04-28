@@ -17,7 +17,7 @@ before_script:
   - echo $(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8983/solr/core0")
   - echo "--------------"
   - mysql -e 'create database travis_solr_test;' -uroot
-  - bundle install --without development
+  # - bundle install --without development
   - RAILS_ENV=test bundle exec rake db:schema:load
   - RAILS_ENV=test bundle exec rake db:fixtures:load
   - RAILS_ENV=test bundle exec rake sunspot:reindex
