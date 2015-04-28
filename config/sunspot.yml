@@ -10,5 +10,5 @@ test:
     hostname: localhost
     port: <%= ENV['TRAVIS'] == 'true' ? 8983 : 8080 %>
     log_level: WARNING
-    path: /solr/default
+    path: /solr/core0
     solr_home: solr
