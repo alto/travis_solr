@@ -21,3 +21,4 @@ before_script:
   - RAILS_ENV=test bundle exec rake db:schema:load
   - RAILS_ENV=test bundle exec rake db:fixtures:load
   - RAILS_ENV=test bundle exec rake sunspot:reindex
+  - echo $(curl "http://localhost:8983/solr/core0/select?q=dude")
