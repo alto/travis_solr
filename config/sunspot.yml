@@ -1,0 +1,13 @@
+development:
+  solr:
+    hostname: localhost
+    port: 8080
+    log_level: INFO
+    path: /solr/default
+
+test:
+  solr:
+    hostname: localhost
+    port: <%= ENV['TRAVIS'] == 'true' ? 8983 : 8080 %>
+    log_level: WARNING
+    path: /solr/default
