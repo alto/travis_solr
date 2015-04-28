@@ -11,6 +11,7 @@ before_script:
   - echo $(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8983/solr/development")
   - echo $(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8983/solr/test")
   - echo $(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8983/solr/default")
+  - echo $(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8983/solr/core0")
   - echo "--------------"
   - mysql -e 'create database travis_solr_test;' -uroot
   - bundle install --without development
