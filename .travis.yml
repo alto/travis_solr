@@ -4,8 +4,7 @@ rvm:
   - 2.2.0
 
 before_script:
-  - curl -sSL https://raw.githubusercontent.com/alto/travis-solr/handle_multiple_solr_confs_correctly/travis-solr.sh | SOLR_VERSION=4.9.1 SOLR_CORE=core0 SOLR_CONFS="$TRAVIS_BUILD_DIR/config/travis/solr.xml $TRAVIS_BUILD_DIR/config/travis/schema.xml" bash
-  - #echo "--------------"
+  - curl -sSL https://raw.githubusercontent.com/alto/travis-solr/handle_multiple_solr_confs_correctly/travis-solr.sh | SOLR_VERSION=4.9.1 SOLR_CORE=core0 SOLR_CONFS="$TRAVIS_BUILD_DIR/config/travis/schema.xml" bash
   - echo "--------------"
   - echo $(curl "http://localhost:8983/solr/admin/cores")
   - echo $(curl "http://localhost:8983/solr/core0/select?q=dude")
