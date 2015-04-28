@@ -8,7 +8,7 @@ before_script:
   - echo "--------------"
   - echo $(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8983/solr/admin/cores")
   - echo $(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8983/solr")
-  - echo $(curl -I "http://localhost:8983/solr")
+  - echo $(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8983/solr/")
   - echo $(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8983/solr/development")
   - echo $(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8983/solr/test")
   - echo $(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8983/solr/default")
