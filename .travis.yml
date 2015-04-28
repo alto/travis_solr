@@ -5,6 +5,13 @@ rvm:
 
 before_script:
   - curl -sSL https://raw.githubusercontent.com/moliware/travis-solr/master/travis-solr.sh | SOLR_VERSION=4.9.1 bash
+  - echo "--------------"
+  - echo $(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8983/solr/admin/cores")
+  - echo $(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8983/solr")
+  - echo $(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8983/solr/development")
+  - echo $(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8983/solr/test")
+  - echo $(curl -s -o /dev/null -w "%{http_code}" "http://localhost:8983/solr/default")
+  - echo "--------------"
   - mysql -e 'create database travis_solr_test;' -uroot
   - bundle install --without development
   - RAILS_ENV=test bundle exec rake db:schema:load
