@@ -1,0 +1,10 @@
+language: ruby
+
+rvm:
+  - 2.2.0
+
+before_script:
+  - mysql -e 'create database travis_solr_test;'
+  - bundle install --without development
+  - RAILS_ENV=test bundle exec rake db:schema:load
+  - RAILS_ENV=test bundle exec rake db:fixtures:load
